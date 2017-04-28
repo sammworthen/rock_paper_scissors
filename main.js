@@ -2,9 +2,11 @@ $(document).ready( function() {
   //grab the player 1's selection
 
   var playerChoice2 = Math.random()
-  var $rock = $('#rock')
-  var $paper = $('#paper')
-  var $scissors = $('#scissors')
+  var playerArray1 = new Array;
+  var playerArray2 = new Array;
+  var playerScore1 = 0
+  var playerScore2 = 0
+
 
   $('button').click( function() {
 
@@ -18,7 +20,7 @@ $(document).ready( function() {
       playerChoice2 = 'scissors'
     };
 
-    $('h2').append('Player 1 chose: ' + playerChoice1 + ' ' +
+    $('h2').text('Player 1 chose: ' + playerChoice1 + ' ' +
                     'Player 2 chose: ' + playerChoice2)
 
     var playerPoints1 = 0
@@ -26,54 +28,90 @@ $(document).ready( function() {
 
     if (playerChoice1 === 'rock') {
       if (playerChoice2 === 'rock') {
-        $('p').append('You tie')
+        $('p').text('You tie')
         playerPoints1 = 0
         playerPoints2 = 0
       }
       else if (playerChoice2 == 'paper') {
-        $('p').append('player 2 wins')
+        $('p').text('player 2 wins')
         playerPoints1 = 0
         playerPoints2 = 1
       }
       else {
-        $('p').append('player 1 wins')
+        $('p').text('player 1 wins')
         playerPoints1 = 1
         playerPoints2 = 0
       }
     }
     else if (playerChoice1 === 'paper') {
       if (playerChoice2 === 'paper') {
-        $('p').append('You tie')
+        $('p').text('You tie')
         playerPoints1 = 0
         playerPoints2 = 0
       }
       else if (playerChoice2 === 'scissors') {
-        $('p').append('player 2 wins')
+        $('p').text('player 2 wins')
         playerPoints1 = 0
         playerPoints2 = 1
       }
       else {
-        $('p').append('player 1 wins')
+        $('p').text('player 1 wins')
         playerPoints1 = 1
         playerPoints2 = 0
        }
     }
     else {
       if (playerChoice2 === 'scissors') {
-        $('p').append('You tie')
+        $('p').text('You tie')
         playerPoints1 = 0
         playerPoints2 = 0
       }
       else if (playerChoice2 === 'rock') {
-        $('p').append('player 2 wins')
+        $('p').text('player 2 wins')
         playerPoints1 = 0
         playerPoints2 = 1
       }
       else {
-        $('p').append('player 1 wins')
+        $('p').text('player 1 wins')
         playerPoints1 = 1
         playerPoints2 = 0
       }
     }
+    console.log(playerPoints1)
+    console.log(playerPoints2)
+
+    var addScores = function(playerPoints1, playerPoints2) {
+      playerArray1.push(playerPoints1)
+      playerArray2.push(playerPoints2)
+    }
+    addScores(playerPoints1, playerPoints2)
+
+    console.log(playerArray1)
+    console.log(playerArray2)
+
+    console.log(playerScore1)
+    console.log(playerScore2)
+
+    var sumScore = function(array1, array2) {
+      for (var i = playerArray1.length -1; i<playerArray1.length; i++) {
+        var win1 = playerArray1[i]
+        var win2 = playerArray2[i]
+        playerScore1 = playerScore1 + win1
+        playerScore2 = playerScore2 + win2
+      }
+    }
+
+    sumScore()
+
+    console.log(playerScore1)
+    console.log(playerScore2)
+
+    $('#playerScores1').each(function() {
+      $(this).html(playerScore1)
+    })
+    $('#playerScores2').each(function() {
+      $(this).html(playerScore2)
+    })
+
   })
 })

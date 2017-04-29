@@ -1,19 +1,43 @@
 <html>
   <head>
-    <link rel="stylesheet" href="main.css">
+    <link rel= "stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   </head>
   <body>
     <h1>Rock, Paper, Scissors</h1>
 
-    <input id="player1" placeholder="Player 1"></input>
-    <input id="player2" placeholder="Player 2"></input>
+    <div class="scoreboard">
+      <h2>Scoreboard</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Player 1</th>
+              <th>Player 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="playerScores1">0</td>
+              <td id="playerScores2">0</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
     <br>
     <br>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <br>
+    <br>
+    <br>
+    <div class="buttons">
+      <button id="rock">Rock</button>
+      <button id="paper">Paper</button>
+      <button id="scissors">Scissors</button>
+      <br>
+      <br>
+      <button id="reset">Reset</button>
+      <p></p>
 
-    <script src="main.js"></script>
+      <script src="main.js"></script>
+    </div>
   </body>
 <html>

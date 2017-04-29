@@ -28,11 +28,11 @@ $(document).ready( function() {
         playerPoints1 = 0
         playerPoints2 = 0
       } else if (playerChoice2 == 'paper') {
-        $('p').text('player 2 wins')
+        $('p').text('Player 2 wins')
         playerPoints1 = 0
         playerPoints2 = 1
       } else {
-        $('p').text('player 1 wins')
+        $('p').text('Player 1 wins')
         playerPoints1 = 1
         playerPoints2 = 0
       }
@@ -42,11 +42,11 @@ $(document).ready( function() {
         playerPoints1 = 0
         playerPoints2 = 0
       } else if (playerChoice2 === 'scissors') {
-        $('p').text('player 2 wins')
+        $('p').text('Player 2 wins')
         playerPoints1 = 0
         playerPoints2 = 1
       } else {
-        $('p').text('player 1 wins')
+        $('p').text('Player 1 wins')
         playerPoints1 = 1
         playerPoints2 = 0
        }
